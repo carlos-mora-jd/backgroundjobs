@@ -8,9 +8,9 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html
       format.csv {
-        @mensaje = Mensaje.new(mensaje: 'Export in progres')
-        if @mensaje.save 
-          Resque.enqueue(ExportWorker, @mensaje.id)
+        @message = Message.new(message: 'Export in progres')
+        if @message.save 
+          Resque.enqueue(ExportWorker, @message.id)
           send_data @users.to_csv
         end        
      }
