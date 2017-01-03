@@ -1,0 +1,1 @@
+export: rake resque:work QUEUE='*'
