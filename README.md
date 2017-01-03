@@ -6,6 +6,9 @@ Small application to execute a background job when export a list of users to csv
 
 * Rails version 5.0.1
 
+ Prerequisites:
+ - Installed and running Redis server
+
  To start the application:
 
   Go to the root path of the project and execute the next commands
