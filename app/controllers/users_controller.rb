@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+ before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
@@ -14,6 +14,20 @@ class UsersController < ApplicationController
           send_data @users.to_csv
         end        
      }
+    end
+  end
+
+  def import    
+    @user = User.last
+    result =  User.import(params[:file])
+    if result.empty?
+      redirect_to root_url,  flash:{ danger:  "Invalid CSV file format."}
+    else
+      puts " -------  -- - --   #{result.inspect}"
+      puts " -------  -- - --   #{result.unsuccess}"
+      puts " -------  -- - --   #{result.success}"
+      Resque.enqueue(ImportWorker, params[:file].original_filename ,result.unsuccess, result.success)
+      redirect_to root_url , flash:{ success:  "Successfully import."} 
     end
   end
 
@@ -35,7 +49,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
+    puts "hola mundo ******  #{@user.inspect}"
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }

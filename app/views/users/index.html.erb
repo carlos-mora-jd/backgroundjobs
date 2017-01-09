@@ -1,7 +1,10 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Users</h1>
   <%= link_to "Download CSV", users_path(format: "csv"), class: "btn btn-primary " %> 
+  <h4>Import data</h4>
+  <%= form_tag import_users_path, multipart: true do %>
+    <%=file_field_tag :file %>
+    <%= submit_tag "Import CSV" , required: true%>
+  <% end %>
 
 <table class="table table-striped">
   <thead>
