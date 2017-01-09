@@ -23,9 +23,6 @@ class UsersController < ApplicationController
     if result.empty?
       redirect_to root_url,  flash:{ danger:  "Invalid CSV file format."}
     else
-      puts " -------  -- - --   #{result.inspect}"
-      puts " -------  -- - --   #{result.unsuccess}"
-      puts " -------  -- - --   #{result.success}"
       Resque.enqueue(ImportWorker, params[:file].original_filename ,result.unsuccess, result.success)
       redirect_to root_url , flash:{ success:  "Successfully import."} 
     end
@@ -49,7 +46,6 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-    puts "hola mundo ******  #{@user.inspect}"
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
