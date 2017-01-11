@@ -37,6 +37,9 @@ gem 'nokogiri', '~> 1.6.8.rc2'
 gem 'faker'
 gem 'sidekiq'
 gem 'resque'
+gem 'foreman'
+gem 'redis'
+gem 'rack', '~> 2.0.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
