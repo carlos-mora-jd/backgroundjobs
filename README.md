@@ -1,6 +1,6 @@
 # README
 
-Small application to execute a background job when export a list of users to csv file
+Small application to execute  background jobs when export a list of users to csv file and import data from CSV file. Too a liitle demostration about WebSockets using ActionCable
 
 * Ruby version 2.2.6
 * Rails version 5.0.1
