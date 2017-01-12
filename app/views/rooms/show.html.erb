@@ -1,10 +1,19 @@
-<h1>Rooms#show</h1>
-<p>Find me in app/views/rooms/show.html.erb</p>
-
-<div id="messages">
-	<%= render @messages %>
+<div class="row">
+	<h1>Messages..</h1>
+	<%= link_to  root_path, class: "btn btn-primary pull-right " do%>
+		<i class="glyphicon glyphicon-home"> Go Home</i>
+	<% end %> 
+	<div class="col-md-12">
+		<div id="messages">
+			<%= render @messages %>
+		</div>
+	</div>
+	<div class="col-md-4">	
+		<form>
+			<div class="form-group">
+				<label for="messageInput">Add a custom message:</label>
+				<input class="form-control" type="text" data-behavior="room_speaker" id="messageInput" placeholder="Type and press enter...">
+			</div>
+		</form>
+	</div>
 </div>	
-<form>
-	<label>Send a message:</label>
-	<input type="text" data-behavior="room_speaker">
-</form>
