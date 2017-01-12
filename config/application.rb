@@ -14,5 +14,6 @@ module BackgroundJobs
     # -- all .rb files in that directory are automatically loaded.
     config.autoload_paths += %W(#{config.root}/app/workers)
 	config.eager_load_paths += %W(#{config.root}/app/workers)
+	config.action_cable.mount_path = '/cable'
   end
 end

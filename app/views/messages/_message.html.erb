@@ -1,0 +1,6 @@
+<% cache message do %>
+	<div class="message">
+		<p><%= message.message %></p>
+		<span class="label label-info pull-right"><%= message.created_at.strftime("Created at %m/%d/%Y %H:%M:%S") %></span>		
+	</div>	
+<% end %>
