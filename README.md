@@ -45,9 +45,9 @@ brew install redis
 You can see a demo  http://screencast.com/t/JHVEOb0LJik
 
 ## References
-https://www.youtube.com/watch?v=n0WUjGkDFS0
-http://edgeguides.rubyonrails.org/action_cable_overview.html
-http://www.thegreatcodeadventure.com/rails-5-preview-action-cable/
-https://github.com/rails/actioncable-examples
-https://www.sitepoint.com/action-cable-and-websockets-an-in-depth-tutorial/
-https://www.pluralsight.com/guides/ruby-ruby-on-rails/creating-a-chat-using-rails-action-cable
+- https://www.youtube.com/watch?v=n0WUjGkDFS0
+- http://edgeguides.rubyonrails.org/action_cable_overview.html
+- http://www.thegreatcodeadventure.com/rails-5-preview-action-cable/
+- https://github.com/rails/actioncable-examples
+- https://www.sitepoint.com/action-cable-and-websockets-an-in-depth-tutorial/
+- https://www.pluralsight.com/guides/ruby-ruby-on-rails/creating-a-chat-using-rails-action-cable
