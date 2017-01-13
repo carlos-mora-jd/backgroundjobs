@@ -1,6 +1,10 @@
 # README
 
-Small application to execute  background jobs when export a list of users to csv file and import data from CSV file. Too a liitle demostration about WebSockets using ActionCable
+Small application to execute  background jobs when export a list of users to csv file and import data from CSV file. Too a liitle demostration about WebSockets using ActionCable.
+### Topics
+ - Executes a job when a user export data to csv file and create a message
+ - Executes a job when a user import data from csv file and create a log with the status of the task
+ - Uses WebSockets to see the messages or send messages between users or subscriptions.
 
 * Ruby version 2.2.6
 * Rails version 5.0.1
